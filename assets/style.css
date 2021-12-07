@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+header {
+    padding: 20px 30px;
+    border-bottom: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+header li {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-flex;
+    justify-content: start
+}
+
+main{
+    justify-content: center;
+    text-align: center;
+}
+
+/*.timer {
+
+}
