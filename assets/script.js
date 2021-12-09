@@ -1,6 +1,7 @@
 var buttonEl = document.querySelector("#start-quiz");
 
-buttonEl.addEventListener("click", testQuestion1);
+//when start button clicked start the time and the quiz
+//buttonEl.addEventListener("click", startTimer, testQuestion1);
 
 function testQuestion1 (){
 //define varaibles Questions 1-5 , answers 1-4 * 5 questions,timer, highscore    
@@ -24,7 +25,7 @@ wrongAnswer3El.textContent = "All of the Above";
 
 };
 
-
+//countdown function 
 function startTimer(duration, display) {
     var timer = duration,seconds;
     setInterval(function () {
@@ -40,7 +41,7 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
-window.onload = function () {
+buttonEl.onclick = function () {
     var sixtySeconds = 60, 
         display = document.querySelector('#time');
     startTimer(sixtySeconds, display);

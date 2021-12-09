@@ -7,21 +7,18 @@
 header {
     padding: 20px 30px;
     border-bottom: none;
-    display: flex;
     flex-wrap: wrap;
-}
-header li {
     font-size: 20px;
     font-weight: bold;
-    display: inline-flex;
-    justify-content: start
+}
+
+#HASH {
+    display: flex;
+    justify-content: space-between;
+
 }
 
 main{
     justify-content: center;
     text-align: center;
-}
-
-/*.timer {
-
 }
