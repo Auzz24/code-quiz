@@ -11,13 +11,11 @@
 <header>
     <nav>
         <ul>
-            <li>
-                <button href="#" class="high-score">
+            <li href="#" class="high-score">
                     VIEW HIGH SCORE 
-                </button>
             </li>
             <li class="timer">
-                TIMER 
+               <div> TIMER <span id="time">60</span></div>
             </li>
         </ul>
     </nav>
@@ -27,9 +25,13 @@
     <p>
         Answer the following code related questions within the time limit. Please keep in mind that incorrect questions will penilize you by deducting 10 from your time. 
     </p>
-    <button class="start-quiz">
+    <button id="start-quiz">
         START QUIZ
     </button>
+    <ul>
+        <li>
+        </li>
+    </ul>
 </main>
 <script src="./assets/script.js"></script>
 </body>
