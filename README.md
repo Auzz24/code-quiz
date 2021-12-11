@@ -9,6 +9,7 @@ To test the users knowledge of codeing
 -JavaScript 
 
 #### Website 
+ https://auzz24.github.io/code-quiz/
 
 ##### Contribution 
 Made with ❤️ by Austin Miller
