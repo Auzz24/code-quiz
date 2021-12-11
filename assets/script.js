@@ -42,14 +42,13 @@ var container = document.querySelector (".questions")
 var WelcomeMessage = document.querySelector (".be-gone")
     WelcomeMessage.style.display = "none";
 
-answersListEl.style.backgroundColor = "red";
-    answersListEl.style.display= "space between";
 
     function subtractTime (){
         timer -= 10
         testQuestion2 ();
     }
 };
+
 
 //countdown function 
 function startTimer(duration) {
@@ -62,9 +61,11 @@ function startTimer(duration) {
 
         if (--timer < 0) {
             timer = duration;
+        // else (--timer <= 0);{
+        //  display.textContent = "0";
         }
     }, 1000);
-}
+};
 
 buttonEl.onclick = function () {
     var sixtySeconds = 59
@@ -73,11 +74,6 @@ buttonEl.onclick = function () {
 
 testQuestion1();
 };
-
-// function nextQuestion () {
-//     testQuestion3 ();
-// }
-
 
 
 //QUESTION 2 
@@ -91,15 +87,15 @@ var testQuestion2 = function (){
     var wrongAnswer1El = document.createElement ("button");
     var wrongAnswer2El = document.createElement ("button");
     var wrongAnswer3El = document.createElement ("button");
-    
-    
+
+        
     //add text for heading, question, answers
     h2El.textContent = "QUESTION 2";
-    questionEl.textContent = "Whats up?";
+    questionEl.textContent = "what does a flex box do?";
     answersListEl.textContent = (correctAnswerEL.textContent, wrongAnswer1El.textContent, wrongAnswer2El.textContent, wrongAnswer3El.textContent);
-    correctAnswerEL.textContent = "nothing much you?";
-    wrongAnswer1El.textContent = "no";
-    wrongAnswer2El.textContent = "yes";
+    correctAnswerEL.textContent = "resizes the webage to fit different screen sizes";
+    wrongAnswer1El.textContent = "something to to with muscles";
+    wrongAnswer2El.textContent = "resizes the text inside a section";
     wrongAnswer3El.textContent = "bye";
     
     correctAnswerEL.addEventListener("click", testQuestion3);
@@ -122,8 +118,6 @@ var testQuestion2 = function (){
             testQuestion3 ();
         }
     };
-
-
 
     //QUESTION 3 
 
@@ -168,8 +162,6 @@ var testQuestion3 = function (){
         }
     };
 
-
-
     //QUESTION 4 
 
     var testQuestion4 = function (){
@@ -192,7 +184,7 @@ var testQuestion3 = function (){
             wrongAnswer2El.textContent = "make coding harder";
             wrongAnswer3El.textContent = "All of the above";
         
-        correctAnswerEL.addEventListener("click", testQuestion4);
+        correctAnswerEL.addEventListener("click", testQuestion5);
         wrongAnswer1El.addEventListener("click", subtractTime);
         wrongAnswer2El.addEventListener("click", subtractTime);
         wrongAnswer3El.addEventListener("click", subtractTime);
@@ -202,8 +194,8 @@ var testQuestion3 = function (){
             container.appendChild (h2El);
             container.appendChild (questionEl);
             container.appendChild (answersListEl);
-            answersListEl.appendChild (correctAnswerEL);
             answersListEl.appendChild (wrongAnswer3El);
+            answersListEl.appendChild (correctAnswerEL);
             answersListEl.appendChild (wrongAnswer2El);
             answersListEl.appendChild (wrongAnswer1El);
 
@@ -233,15 +225,15 @@ var testQuestion3 = function (){
         h2El.textContent = "QUESTION 5";
         questionEl.textContent = "The # in a css or JavaScript document refers to what?";
         answersListEl.textContent = (correctAnswerEL.textContent, wrongAnswer1El.textContent, wrongAnswer2El.textContent, wrongAnswer3El.textContent);
-        correctAnswerEL.textContent = "hastag";
-            wrongAnswer1El.textContent = "I.D";
+            wrongAnswer1El.textContent = "hashtag";
             wrongAnswer2El.textContent = "Element";
             wrongAnswer3El.textContent = "number sign";
+            correctAnswerEL.textContent = "I.D";
         
-        correctAnswerEL.addEventListener("click", testQuestion4); //stop timer 
-        wrongAnswer1El.addEventListener("click", subtractTime);
-        wrongAnswer2El.addEventListener("click", subtractTime);
-        wrongAnswer3El.addEventListener("click", subtractTime);
+        correctAnswerEL.addEventListener("click", correctStop); //stop timer 
+        wrongAnswer1El.addEventListener("click", wrongStop);
+        wrongAnswer2El.addEventListener("click", wrongStop);
+        wrongAnswer3El.addEventListener("click", wrongStop);
         
         var container = document.querySelector (".questions")
             container.innerHTML = "";
@@ -253,12 +245,42 @@ var testQuestion3 = function (){
             answersListEl.appendChild (wrongAnswer2El);
             answersListEl.appendChild (wrongAnswer1El);
 
+            function correctStop() {
+                clearInterval(startTimer);
+                localStorage.setItem ("high score", timer)
+                //window.alert ("game over- refresh to play agin")
+              };
 
-        function subtractTime (){
-            timer -= 10
-            testQuestion5 ();
-        }
-        };
+              function wrongStop(){
+                clearInterval(startTimer);
+                  localStorage.setItem ("high score", timer -10 )
+                //window.alert ("game over- refresh to play agin")
+              }
+
+
+            // if correct answer EL then stop timer populate storage 
+            //if else timer -+ 10 and stop 
+
+        
+
+        // function stopTimeCorrect(){
+        //     timer = pause; 
+        //     localStorage.setItem ("high score", timer)
+        //     //add to local storage  
+        // }
+
+        // function stopTimeWrong(){
+        //     timer -= 10 
+        //     //make time a]\]]\stop 
+        //     //add to local storage 
+        // }
+         };
+
+        // localStorage.
+
+        //var === 
+
+
 
 //correctAnswerEL.textContent = "Application Program Interface";
     // wrongAnswer1El.textContent = "All the People Inbetween";
