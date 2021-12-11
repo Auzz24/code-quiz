@@ -5,11 +5,15 @@
 }
 
 header {
-    padding: 20px 30px;
+    padding: 20px 0px 20px 75px;
     border-bottom: none;
     flex-wrap: wrap;
     font-size: 20px;
     font-weight: bold;
+}
+
+main p {
+    padding: 20px 100px;
 }
 
 #HASH {
