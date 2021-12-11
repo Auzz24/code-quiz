@@ -1,7 +1,40 @@
 var buttonEl = document.querySelector("#start-quiz");
+var highScoreEl = document.querySelector ("#high-score")
 var h2El = document.querySelector("heading");
 var timer; 
+var myTimer;
+var playerName = window.prompt ("What is your name?")
 
+//high score functions
+
+highScoreEl.onclick = function () {
+    highScores ();
+  };
+  
+  var highScores = function (){
+      
+      var h2El = document.createElement("h2");
+      var answersListEl = document.createElement("ul");
+      var returnEl = document.createElement("p");
+      
+      
+      function getValue(){
+          return localStorage.getItem(playerName);
+      }
+      
+      h2El.textContent = "HIGH SCORES";
+      answersListEl.textContent = getValue
+      returnEl.textContent = "REFRESH THE PAGE TO START QUIZ"
+      
+      var container = document.querySelector (".questions")
+          container.appendChild (h2El);
+          container.appendChild (answersListEl);
+          container.appendChild (returnEl);
+      
+      var WelcomeMessage = document.querySelector (".be-gone")
+          WelcomeMessage.style.display = "none";
+      };
+      
 
 //QUESION 1 
 
@@ -49,12 +82,11 @@ var WelcomeMessage = document.querySelector (".be-gone")
     }
 };
 
-
 //countdown function 
 function startTimer(duration) {
     timer = duration
     var seconds;
-    setInterval(function () {
+    myTimer = setInterval(function () {
         seconds = timer
         var display = document.querySelector('#time');
         display.textContent = seconds;
@@ -246,16 +278,16 @@ var testQuestion3 = function (){
             answersListEl.appendChild (wrongAnswer1El);
 
             function correctStop() {
-                clearInterval(startTimer);
-                localStorage.setItem ("high score", timer)
-                //window.alert ("game over- refresh to play agin")
+                clearInterval(myTimer);
+                localStorage.setItem (playerName , timer)
+                window.alert ("game over- refresh to play agin")
               };
 
               function wrongStop(){
-                clearInterval(startTimer);
-                  localStorage.setItem ("high score", timer -10 )
-                //window.alert ("game over- refresh to play agin")
-              }
+                clearInterval(myTimer);
+                  localStorage.setItem (playerName, timer -10 )
+                window.alert ("game over- refresh to play agin")
+              };
 
 
             // if correct answer EL then stop timer populate storage 
