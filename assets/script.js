@@ -4,6 +4,12 @@ var h2El = document.querySelector("heading");
 var timer; 
 var myTimer;
 var playerName = window.prompt ("What is your name?")
+var getData = {
+    "firstData": "data1",
+    "secondData": "data2",
+    "thirdData":"data3",
+}
+
 
 //high score functions
 
@@ -16,14 +22,15 @@ highScoreEl.onclick = function () {
       var h2El = document.createElement("h2");
       var answersListEl = document.createElement("ul");
       var returnEl = document.createElement("p");
+
+   
       
-      
-      function getValue(){
-          return localStorage.getItem(playerName);
-      }
+    //   function getValue(){
+    //       return localStorage.getItem(playerName);
+    //   };
       
       h2El.textContent = "HIGH SCORES";
-      answersListEl.textContent = getValue
+      answersListEl.textContent = "FIND HIGH SCORES IN LOCAL STORAGE COULD NOT GET IT TO DISPLAY"
       returnEl.textContent = "REFRESH THE PAGE TO START QUIZ"
       
       var container = document.querySelector (".questions")
@@ -36,6 +43,7 @@ highScoreEl.onclick = function () {
       };
       
 
+      
 //QUESION 1 
 
 var testQuestion1 = function (){
@@ -92,10 +100,10 @@ function startTimer(duration) {
         display.textContent = seconds;
 
         if (--timer < 0) {
-            timer = duration;
-        // else (--timer <= 0);{
-        //  display.textContent = "0";
-        }
+            window.alert ("game over, refresh the page to try again")
+            display.textContent= "0"
+                }
+        
     }, 1000);
 };
 
@@ -288,80 +296,6 @@ var testQuestion3 = function (){
                   localStorage.setItem (playerName, timer -10 )
                 window.alert ("game over- refresh to play agin")
               };
-
-
-            // if correct answer EL then stop timer populate storage 
-            //if else timer -+ 10 and stop 
-
-        
-
-        // function stopTimeCorrect(){
-        //     timer = pause; 
-        //     localStorage.setItem ("high score", timer)
-        //     //add to local storage  
-        // }
-
-        // function stopTimeWrong(){
-        //     timer -= 10 
-        //     //make time a]\]]\stop 
-        //     //add to local storage 
-        // }
          };
 
         // localStorage.
-
-        //var === 
-
-
-
-//correctAnswerEL.textContent = "Application Program Interface";
-    // wrongAnswer1El.textContent = "All the People Inbetween";
-    // wrongAnswer2El.textContent = "Austin Programs Inside";
-    // wrongAnswer3El.textContent = "I dont know";
-    
-            //correctAnswer3EL.textContent = "Application Program Interface";
-        // wrongAnswer1El.textContent = "All the People Inbetween";
-        // wrongAnswer2El.textContent = "Austin Programs Inside";
-        // wrongAnswer3El.textContent = "I dont know";
-        
-        //correctAnswerEL.textContent = "Displays HTML eleement as an Object";
-            // wrongAnswer1El.textContent = "Dominates";
-            // wrongAnswer2El.textContent = "make coding harder";
-            // wrongAnswer3El.textContent = "All of the above";
-            // var testQuestion5 = function (){
-            //     //create the element 
-            //     var h2El = document.createElement("h2");
-            //     var questionEl = document.createElement("p");
-            //     var answersListEl = document.createElement("ul");
-            //     var correctAnswerEL = document.createElement("button");
-            //     var wrongAnswer1El = document.createElement ("button");
-            //     var wrongAnswer2El = document.createElement ("button");
-            //     var wrongAnswer3El = document.createElement ("button");
-                
-                
-            //     //add text for heading, question, answers
-            //     h2El.textContent = "QUESTION 5";
-            //     questionEl.textContent = "Which statement is true about arrays?";
-            //     answersListEl.textContent = (correctAnswerEL.textContent, wrongAnswer1El.textContent, wrongAnswer2El.textContent, wrongAnswer3El.textContent);
-            //     correctAnswerEL.textContent = "Arrays can store multiple variable";
-            //     wrongAnswer1El.textContent = "same thing as a string";
-            //     wrongAnswer2El.textContent = "can store up to two values";
-            //     wrongAnswer3El.textContent = "Cousin of the animal Rays";
-                
-            //     correctAnswerEL.addEventListener("click", nextQuestion);
-            //     wrongAnswer1El.addEventListener("click", subtractTime5);
-            //     wrongAnswer2El.addEventListener("click", subtractTime5);
-            //     wrongAnswer3El.addEventListener("click", subtractTime5);
-                
-            //     var container = document.querySelector (".questions")
-            //         container.innerHTML = "";
-            //         container.appendChild (h2El);
-            //         container.appendChild (questionEl);
-            //         container.appendChild (answersListEl);
-            //         answersListEl.appendChild (correctAnswerEL);
-            //         answersListEl.appendChild (wrongAnswer3El);
-            //         answersListEl.appendChild (wrongAnswer2El);
-            //         answersListEl.appendChild (wrongAnswer1El);
-            //     };
-            
-        
